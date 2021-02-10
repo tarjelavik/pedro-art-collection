@@ -61,6 +61,7 @@ export {default as figure} from './images/figure.js'
 export {default as imageCompare} from './images/imageCompare.js'
 export {default as mainImage} from './images/mainImage.js'
 export {default as mainRepresentation} from './images/mainRepresentation.js'
+export {default as digitalImageObject} from './images/digitalImageObject.js'
 
 export {default as contributionAssignment} from './objects/contributionAssignment.js'
 export {default as background} from './objects/background.js'

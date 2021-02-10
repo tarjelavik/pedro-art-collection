@@ -39,9 +39,9 @@ export const accessState = {
 }
 
 export const mainRepresentation = {
+  name: 'mainRepresentation',
   title: 'Hovedrepresentasjon',
   titleEN: 'Main representation',
-  name: 'mainRepresentation',
   description: (
     <span>
       Last opp eller velg et bilde. Dette er bildet som brukes som forhåndsvisning.{' '}
@@ -58,7 +58,7 @@ export const mainRepresentation = {
       </Link>
     </span>
   ),
-  type: 'mainRepresentation',
+  type: 'digitalImageObject',
 }
 
 export const subjectOfManifest = {

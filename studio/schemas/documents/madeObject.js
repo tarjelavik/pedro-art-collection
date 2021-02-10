@@ -148,13 +148,28 @@ export default {
       fieldset: 'representation',
     },
     {
+      name: 'representation',
+      title: 'Digitale bilder',
+      titleEN: 'Digital images',
+      description: 'For objekt med flere bilder, blad, versjoner eller sider av objektet. Bruk "hovedrepresentasjon" til forhåndsvisning.',
+      descriptionEN: 'For objects with multiple images of pages, versions or sides of the object. Use "main representation" for thumbnail.',
+      fieldset: 'representation',
+      type: 'array',
+      of: [
+        {type: 'digitalImageObject'},
+      ],
+      options: {
+        layout: 'grid'
+      }
+    },
+    {
       ...subjectOfManifest,
       fieldset: 'representation',
     },
-    {
+    /* {
       ...iiifStructures,
       fieldset: 'representation',
-    },
+    }, */
     {
       ...relation,
       fieldset: 'relations',
