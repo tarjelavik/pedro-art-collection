@@ -1,3 +1,7 @@
+/* 
+  Subclass of D1 Digital Object
+*/
+
 export default {
   name: 'digitalImageObject',
   title: 'Image',
@@ -12,9 +16,26 @@ export default {
       title: 'Bildetekst',
       titleEN: 'Caption',
       type: 'localeString',
+    },
+    {
+      name: 'alt',
+      title: 'Alternative tekst',
+      titleEN: 'Alternative text',
+      description: 'Important for SEO and accessiblity.',
+      type: 'localeString',
+      validation: (Rule) => Rule.warning('You should to fill out the alternative text.'),
       options: {
         isHighlighted: true,
       },
+    },
+    {
+      name: 'annotations',
+      title: 'Annoteringer',
+      titleEN: 'Annotations',
+      type: 'array',
+      of: [{
+        type: 'annotationPage'
+      }]
     },
   ],
   preview: {

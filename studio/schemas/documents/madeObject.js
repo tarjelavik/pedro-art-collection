@@ -6,7 +6,8 @@ import {FaBookDead} from 'react-icons/fa'
 import {
   editorialState,
   accessState,
-  mainRepresentation,
+  image,
+  digitallyShownBy,
   subjectOfManifest,
   preferredIdentifier,
   license,
@@ -24,7 +25,6 @@ import {
   measuredBy,
   consistsOf,
   labelSingleton,
-  iiifStructures,
   presentAt,
 } from '../props'
 import {coalesceLabel} from '../helpers/helpers'
@@ -52,8 +52,13 @@ export default {
       options: {collapsible: true, collapsed: false},
     },
     {
+      name: 'mainImage',
+      title: 'Hovedbilde',
+      options: {collapsible: true, collapsed: false},
+    },
+    {
       name: 'representation',
-      title: 'Hovedbilde og IIIF manifest',
+      title: 'Alle bilder',
       options: {collapsible: true, collapsed: false},
     },
     {
@@ -144,32 +149,17 @@ export default {
       fieldset: 'minimum',
     },
     {
-      ...mainRepresentation,
-      fieldset: 'representation',
+      ...image,
+      fieldset: 'mainImage',
     },
     {
-      name: 'representation',
-      title: 'Digitale bilder',
-      titleEN: 'Digital images',
-      description: 'For objekt med flere bilder, blad, versjoner eller sider av objektet. Bruk "hovedrepresentasjon" til forhåndsvisning.',
-      descriptionEN: 'For objects with multiple images of pages, versions or sides of the object. Use "main representation" for thumbnail.',
+      ...digitallyShownBy,
       fieldset: 'representation',
-      type: 'array',
-      of: [
-        {type: 'digitalImageObject'},
-      ],
-      options: {
-        layout: 'grid'
-      }
     },
     {
       ...subjectOfManifest,
       fieldset: 'representation',
     },
-    /* {
-      ...iiifStructures,
-      fieldset: 'representation',
-    }, */
     {
       ...relation,
       fieldset: 'relations',
@@ -223,7 +213,7 @@ export default {
       id: 'preferredIdentifier',
       type: 'hasType.0.label',
       blocks: 'description',
-      media: 'mainRepresentation',
+      media: 'image',
       published: 'accessState',
     },
     prepare(selection) {
